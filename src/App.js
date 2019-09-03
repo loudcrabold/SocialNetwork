@@ -10,34 +10,32 @@ import News from "./components/news/News";
 import Music from "./components/music/Music";
 
 
-
 function App(props) {
 
     return (
 
-            <div className='app-wrapper'>
-                <Header/>
-                <NavBar/>
+        <div className='app-wrapper'>
+            <Header/>
+            <NavBar/>
 
 
-                <div className='app-wrapper-content'>
-                    <Switch>
-                        <Route path='/dialogs' component={() =>
-                            <Dialogs
-                                state={props.state.messagesPage}/>}/>
-                        <Route path='/profile' component={() =>
-                            <Profile
-                                state={props.state.profilePage}
-                                addPost={props.addPost}
-                                updateNewPostText={props.updateNewPostText}/>}/>
-                        <Route path='/news' component={() => <News/>}/>
-                        <Route path='/music' component={() => <Music/>}/>
-                        <Route path='/settings' component={() => <Settings/>}/>
-                        {/*<Dialogs/>*/}
-                    </Switch>
+            <div className='app-wrapper-content'>
+                <Switch>
+                    <Route path='/dialogs' component={() =>
+                        <Dialogs store={props.store}
+                            state={props.state.messagesPage}/>}/>
+                    <Route path='/profile' component={() =>
+                        <Profile
+                            state={props.state.profilePage}
+                            dispatch={props.dispatch}/>}/>
+                    <Route path='/news' component={() => <News/>}/>
+                    <Route path='/music' component={() => <Music/>}/>
+                    <Route path='/settings' component={() => <Settings/>}/>
+                    {/*<Dialogs/>*/}
+                </Switch>
 
-                </div>
             </div>
+        </div>
 
     );
 }

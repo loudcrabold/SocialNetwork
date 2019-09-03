@@ -6,11 +6,13 @@ const ProfileInfo = () => {
     return (
         <div>
             <div>
-                <img src="https://of-crimea.ru/plug/Peschanye-plyazhi-Kryma.jpg" alt=""/>
+                <img className={classes.background} src="https://of-crimea.ru/plug/Peschanye-plyazhi-Kryma.jpg" alt=""/>
             </div>
             <div className={classes.descroptionBlock}>
-                <img src="https://memepedia.ru/wp-content/uploads/2018/07/cover-3-1.jpg" alt=""/>
-
+                <img className={classes.avatar} src="https://memepedia.ru/wp-content/uploads/2018/07/cover-3-1.jpg" alt=""/>
+                <span className={classes.name}>
+                    Sergey Klyus
+                </span>
             </div>
         </div>
     )

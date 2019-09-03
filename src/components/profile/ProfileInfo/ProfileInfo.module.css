@@ -1,3 +1,14 @@
 .descroptionBlock {
     padding: 10px;
 }
+.background {
+    width: 400px;
+
+}
+.avatar {
+    width: 100px;
+}
+
+.name {
+    margin:15px;
+}
