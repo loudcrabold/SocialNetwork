@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./components/header/header";
 import NavBar from "./components/nav/nav";
 import Profile from "./components/profile/Profile.js";
-import Dialogs from "./components/dialogs/Dialogs";
+import DialogsContainer from "./components/dialogs/DialogsContainer";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Settings from "./components/settings/Settings";
 import News from "./components/news/News";
@@ -21,16 +21,14 @@ function App(props) {
 
             <div className='app-wrapper-content'>
                 <Switch>
-                    <Route path='/dialogs' component={() =>
-                        <Dialogs store={props.store}
-                            state={props.state.messagesPage}/>}/>
-                    <Route path='/profile' component={() =>
+                    <Route path='/dialogs' render={() =>
+                        <DialogsContainer store={props.store}/>}/>
+                    <Route path='/profile' render={() =>
                         <Profile
-                            state={props.state.profilePage}
-                            dispatch={props.dispatch}/>}/>
-                    <Route path='/news' component={() => <News/>}/>
-                    <Route path='/music' component={() => <Music/>}/>
-                    <Route path='/settings' component={() => <Settings/>}/>
+                            store={props.store}/>}/>
+                    <Route path='/news' render={() => <News/>}/>
+                    <Route path='/music' render={() => <Music/>}/>
+                    <Route path='/settings' render={() => <Settings/>}/>
                     {/*<Dialogs/>*/}
                 </Switch>
 
