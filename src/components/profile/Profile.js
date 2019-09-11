@@ -5,13 +5,13 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 
 
-const Profile = (props) => {
+const Profile = () => {
 
     debugger
     return (
         <div className={classes.content}>
             <ProfileInfo/>
-            <MyPostsContainer store={props.store}  />
+            <MyPostsContainer />
 
         </div>
     )

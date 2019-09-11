@@ -4,12 +4,11 @@ import Dialogs from "./Dialogs";
 import StoreContext from "../../StoreContext";
 
 
-const DialogsContainer = (props) => {
+const DialogsContainer = () => {
 
-    // let state = props.store.getState().messagesPage;
 
-    return <StoreContext.Consumer>{
-        (store) => {
+    return <StoreContext.Consumer>
+        {(store) => {
             let onSendMessageClick = () => {
                 store.dispatch(sendMessageCreator())
             };
@@ -23,9 +22,10 @@ const DialogsContainer = (props) => {
                             dialogsData={state.dialogsData}
                             messagesData={state.messagesData}
                             newMessageBody={state.newMessageBody}/>
-        }
-    }
+        }}
     </StoreContext.Consumer>
+
+
 };
 
 export default DialogsContainer;

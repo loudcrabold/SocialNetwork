@@ -22,10 +22,9 @@ function App(props) {
             <div className='app-wrapper-content'>
                 <Switch>
                     <Route path='/dialogs' render={() =>
-                        <DialogsContainer store={props.store}/>}/>
+                        <DialogsContainer />}/>
                     <Route path='/profile' render={() =>
-                        <Profile
-                            store={props.store}/>}/>
+                        <Profile/>}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>
