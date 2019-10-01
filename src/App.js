@@ -8,6 +8,8 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Settings from "./components/settings/Settings";
 import News from "./components/news/News";
 import Music from "./components/music/Music";
+import Users from "./components/Users/UsersAPIComponent";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 function App(props) {
@@ -25,9 +27,11 @@ function App(props) {
                         <DialogsContainer />}/>
                     <Route path='/profile' render={() =>
                         <Profile/>}/>
+                    <Route path='/users' render={() => <UsersContainer/>}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>
+
 
                 </Switch>
 

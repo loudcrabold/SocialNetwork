@@ -13,7 +13,7 @@ let mapStateToProps = (state) => {
         messagesData: state.messagesPage.messagesData
     }
 }
-let mapDispatchTOProps = (dispatch) => {
+let mapDispatchToProps = (dispatch) => {
     return{
         onSendMessageClick: () => {
             dispatch(sendMessageCreator())
@@ -25,7 +25,7 @@ let mapDispatchTOProps = (dispatch) => {
     }
 }
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchTOProps)(Dialogs);
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
 
 
