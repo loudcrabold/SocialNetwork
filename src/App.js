@@ -10,6 +10,7 @@ import News from "./components/news/News";
 import Music from "./components/music/Music";
 import Users from "./components/Users/UsersAPIComponent";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/profile/ProfileContainer";
 
 
 function App(props) {
@@ -25,8 +26,8 @@ function App(props) {
                 <Switch>
                     <Route path='/dialogs' render={() =>
                         <DialogsContainer />}/>
-                    <Route path='/profile' render={() =>
-                        <Profile/>}/>
+                    <Route path='/profile/:userId?' render={() =>
+                        <ProfileContainer/>}/>
                     <Route path='/users' render={() => <UsersContainer/>}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>

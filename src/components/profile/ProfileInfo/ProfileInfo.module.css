@@ -1,14 +1,36 @@
-.descroptionBlock {
-    padding: 10px;
+.name {
+    font-weight: bold;
+    font-size: 25px;
+    margin:15px;
 }
-.background {
-    width: 400px;
 
+
+.descroptionBlock {
+    margin:15px;
+    font-size: 15px;
+    margin:15px;
+}
+.bioAboutMe {
+    font-weight: bold;
 }
 .avatar {
-    width: 100px;
+    width: 250px;
 }
 
-.name {
+.contact {
+
     margin:15px;
+
+}
+.contact ul li{
+    list-style-type: none;
+}
+
+
+
+.work {
+    margin: 15px;
+}
+img.lookingForAJob {
+    width: 200px;
 }
