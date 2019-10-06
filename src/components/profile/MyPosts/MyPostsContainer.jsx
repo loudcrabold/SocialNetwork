@@ -3,16 +3,14 @@ import {addPostActionCreator, onPostChangeActionCreater} from "../../../redux/pr
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
-
-
 let mapStateToProps = (state) => {
     return {
         posts: state.profilePage.posts,
         newPostText: state.profilePage.newPostText
     }
+};
 
-}
-let mapDispatchTOProps = (dispatch) => {
+let mapDispatchToProps = (dispatch) => {
     return {
         addPost: () => {
             dispatch(addPostActionCreator());
@@ -22,10 +20,8 @@ let mapDispatchTOProps = (dispatch) => {
             dispatch(action);
         }
     }
-}
+};
 
-const MyPostsContainer = connect(mapStateToProps, mapDispatchTOProps)(MyPosts);
-
-
+const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts);
 
 export default MyPostsContainer;

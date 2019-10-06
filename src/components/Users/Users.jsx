@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./users.module.css";
 import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 
 let Users = (props) => {
@@ -35,10 +36,34 @@ let Users = (props) => {
                         </div>
                         <div>
                             {u.followed ? <button onClick={() => {
-                                    props.follow(u.id)
+                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
+                                        {
+                                            withCredentials: true,
+                                            headers: {
+                                                "API-KEY": "6bfc5889-c23e-4689-817c-0ef76f8f953a"
+                                            }
+                                        }).then(response => {
+                                            if (response.data.resultCode === 0) {
+                                                
+                                                props.unFollow(u.id)
+                                            }
+                                        }
+                                    )
+
                                 }}>unFollow</button>
                                 : <button onClick={() => {
-                                    props.unFollow(u.id)
+                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
+                                        {
+                                            withCredentials: true,
+                                            headers: {
+                                                "API-KEY": "6bfc5889-c23e-4689-817c-0ef76f8f953a"
+                                            }
+                                        }).then(response => {
+                                            if (response.data.resultCode === 0) {
+                                                props.follow(u.id)
+                                            }
+                                        }
+                                    )
                                 }}>follow</button>}
                         </div>
 

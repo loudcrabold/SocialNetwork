@@ -9,8 +9,8 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
-    const itemsContacts = []
-    const nullContact = "Отсутствует"
+    const itemsContacts = [];
+    const nullContact = "Отсутствует";
 
     for (let contacts in props.profile.contacts) {
         itemsContacts.push(
