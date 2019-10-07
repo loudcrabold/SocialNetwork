@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Dialogs";
+import {Redirect} from "react-router-dom";
 
 
 
@@ -20,7 +21,7 @@ const Dialogs = (props) => {
         props.dialogsData.map(d => <DialogItem name={d.name} id={d.id}/>);
     let messagesElements =
         props.messagesData.map(m => <Message message={m.message} id={m.id}/>);
-
+    console.log(props)
 
 
     return (

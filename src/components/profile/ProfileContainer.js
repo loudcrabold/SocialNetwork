@@ -1,12 +1,11 @@
 import React from 'react';
-
-
 import classes from "./Profile.module.css"
 import Profile from "./Profile"
-import * as axios from "axios"
 import {connect} from 'react-redux'
-import {setMyId, setMyIdProfile, setProfileById, setUserProfile} from "../../redux/profile-reducer"
-import {withRouter} from "react-router-dom"
+import {setMyId, setMyIdProfile, setProfileById} from "../../redux/profile-reducer"
+import {Redirect, withRouter} from "react-router-dom"
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 
 class ProfileContainer extends React.Component {
@@ -27,6 +26,9 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
+
+
+
         return (
             <div className={classes.content}>
                 <Profile {...this.props} profile={this.props.profile}/>
@@ -34,9 +36,8 @@ class ProfileContainer extends React.Component {
         )
     }
 }
+let mapStateTopProps = (state) => ({profile: state.profilePage.profile, myId: state.profilePage.myId, isAuth: state.auth.isAuth});
 
-let mapStateTopProps = (state) => ({profile: state.profilePage.profile, myId: state.profilePage.myId});
-let UrlDataProfile = withRouter(ProfileContainer);
 
-export default connect(mapStateTopProps, {setUserProfile, setMyId, setMyIdProfile, setProfileById})(UrlDataProfile);
+export default compose(connect(mapStateTopProps, {setMyId, setMyIdProfile, setProfileById}), withRouter, withAuthRedirect)(ProfileContainer);
 
