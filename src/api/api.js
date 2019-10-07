@@ -16,7 +16,18 @@ export const usersAPI = {
             {withCredentials: true}).then(response => {
             return response.data
         })
+    },
+    follow(userId){
+        return instance.post(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`)
+    },
+    unFollow(userId){
+        return instance.delete(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`)
     }
 };
-export const profileAPI = {};
+export const profileAPI = {
+    authMe(){
+         return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {withCredentials: true})
+    }
+
+};
 export const followAPI = {};
