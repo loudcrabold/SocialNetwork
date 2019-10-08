@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './ProfileInfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
 import lookingForAJobImg from '../../../assets/images/lookingForAJob.jpg'
-import dialogsReducer from "../../../redux/dialogs-reducer";
+import ProfileStatus from './ProfileStatus'
 
 const ProfileInfo = (props) => {
 
@@ -22,6 +22,7 @@ const ProfileInfo = (props) => {
             <div className={classes.name}>
                 {props.profile.fullName}
             </div>
+            <ProfileStatus status={'Hello'}/>
             <div className={classes.descroptionBlock}>
                 <img className={classes.avatar} src={props.profile.photos.large} alt=""/>
                 <div className={classes.bio}>

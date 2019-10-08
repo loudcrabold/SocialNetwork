@@ -39,5 +39,5 @@ class ProfileContainer extends React.Component {
 let mapStateTopProps = (state) => ({profile: state.profilePage.profile, myId: state.profilePage.myId, isAuth: state.auth.isAuth});
 
 
-export default compose(connect(mapStateTopProps, {setMyId, setMyIdProfile, setProfileById}), withRouter, withAuthRedirect)(ProfileContainer);
+export default compose(connect(mapStateTopProps, {setMyId, setMyIdProfile, setProfileById}), withRouter)(ProfileContainer);
 
